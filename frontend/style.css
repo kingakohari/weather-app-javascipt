@@ -1,0 +1,229 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  box-sizing: border-box;
+  background: transparent;
+  font-family: 'Hubballi', cursive;
+  }
+  
+  a {
+  text-decoration: none;
+  }
+  
+  a img {
+  border: none;
+  }
+  
+  button,
+  a {
+  cursor: pointer;
+  color: inherit;
+  }
+  
+  textarea {
+  resize: none;
+  }
+  
+  button,
+  textarea,
+  select {
+  appearance: none !important;
+  border-radius: 0;
+  }
+  
+  /* --------------End of CSS reset------------*/
+
+body {
+  background-image: url("sunny.jpg");
+  width: 1800px;
+  height: 100%;
+  background-size: auto;
+    
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+  font-weight: bold;
+  color:rgb(179, 63, 63);
+  text-shadow: rgb(0, 0, 0) 3px 0px 0px, rgb(0, 0, 0) 2.83487px 0.981584px 0px, rgb(0, 0, 0) 2.35766px 1.85511px 0px, rgb(0, 0, 0) 1.62091px 2.52441px 0px, rgb(0, 0, 0) 0.705713px 2.91581px 0px, rgb(0, 0, 0) -0.287171px 2.98622px 0px, rgb(0, 0, 0) -1.24844px 2.72789px 0px, rgb(0, 0, 0) -2.07227px 2.16926px 0px, rgb(0, 0, 0) -2.66798px 1.37182px 0px, rgb(0, 0, 0) -2.96998px 0.42336px 0px, rgb(0, 0, 0) -2.94502px -0.571704px 0px, rgb(0, 0, 0) -2.59586px -1.50383px 0px, rgb(0, 0, 0) -1.96093px -2.27041px 0px, rgb(0, 0, 0) -1.11013px -2.78704px 0px, rgb(0, 0, 0) -0.137119px -2.99686px 0px, rgb(0, 0, 0) 0.850987px -2.87677px 0px, rgb(0, 0, 0) 1.74541px -2.43999px 0px, rgb(0, 0, 0) 2.44769px -1.73459px 0px, rgb(0, 0, 0) 2.88051px -0.838247px 0px;
+  /* text-shadow:  2px 2px 2px rgb(241, 150, 12); */
+  
+}
+
+h5 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Input form */
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  gap: 30px;
+  font-size: 30px;
+}
+
+#display_data {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  border: 2px solid rgb(179, 63, 63);
+  background-color: rgb(207, 70, 70);
+  font-size: 40px;
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 10px;
+  white-space: normal;
+  transition-duration: 0.5s;
+}
+
+button:hover {
+  background-color: rgb(241, 150, 12);
+}
+
+/* Weather card */
+
+.results {
+  position: relative;
+  border: none;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  gap: 15px;
+  font-size: 50px;
+  background: rgba(255, 255, 255, 0.555);
+  width: 900px;
+  height: auto;
+  visibility: hidden;
+  animation-duration: 90s;
+  animation-name: fadeIn;
+  animation-delay: 2.3s;
+}
+
+@keyframes fadeIn {
+  from {
+    visibility: hidden;
+  }
+
+  to {
+    visibility: visible;
+  }
+}
+
+
+/* Autocomplete */
+
+.autocomplete {
+  /*the container must be positioned relative:*/
+  position: relative;
+  display: inline-block;
+  
+}
+input {
+  border: 3px solid black;
+  background-color: #f1f1f1;
+  padding: 20px;
+  font-size: 50px;
+  margin:30px;
+  border-radius: 25px;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin: 0;
+}
+input[type=text] {
+  background-color: #f1f1f1;
+  width: 100%;
+}
+
+.autocomplete-items {
+  position: relative;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+}
+.autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: #e9e9e9;
+}
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: rgb(113, 134, 155) !important;
+  color: #ffffff;
+}
+
+
+/* Spinner */
+
+#spinner:not([hidden]) {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#spinner::after {
+  content: "";
+  width: 80px;
+  height: 80px;
+  border: 5px solid rgb(202, 89, 89);
+  border-top: 3px solid rgb(221, 197, 60);
+  border-radius: 100%;
+  will-change: transform;
+  animation: spin 1s infinite linear
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.container .cityimg {
+  position: absolute;
+  width: 100vw;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: fill;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
