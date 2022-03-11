@@ -46,8 +46,8 @@ const loadEvent = async _ => {
     
     const apiKey = "a392157e968f4ab9bad132923220703"
     const requestedDate = today
-    const city = document.querySelector("input")
-    /* const city = "Szeged" */  
+    /* const city = document.querySelector("input") */
+    const city = "Budapest" 
 
 
     const worldRes = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`);
@@ -55,7 +55,7 @@ const loadEvent = async _ => {
 
     console.log(getWorld)
      
-    let weatherStats = Object.values(getWorld).map(function(wth){
+   /*  let weatherStats = Object.values(getWorld).map(function(wth){
         return new World(wth.name, wth.temp_c, wth.icon, wth.humidity, wth.uv, wth.wind_kph, wth.wind_dir)
         })
 
@@ -66,16 +66,17 @@ const loadEvent = async _ => {
         content = weatherCard(weatherStat.city, weatherStat.temperature, weatherStat.condition, weatherStat.humidity, weatherStat.uv, weatherStat.windspeed, weatherStat.winddir)
 
     }
+    
 
     document.getElementById("root").insertAdjacentHTML("beforeend", content)
 
     document.querySelector("button").addEventListener("submit", function(event) {
         
         document.querySelector(".city").innerHTML = `${city}`
-    });
+    }); */
+ 
 
-
-    /*     const getWeather = fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`).then(
+        const getWeather = fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`).then(
         function(response){
             response.json().then(
                 function (responseJson) {
@@ -85,11 +86,11 @@ const loadEvent = async _ => {
                 )
             }) 
        
-    let weatherStat = getWeather.map(function(wth){
+   /*  let weatherStat = getWeather.map(function(wth){
         return new World(wth.location.name, wth.current.temp_c, wth.current.condition.icon, wth.current.humidity, wth.current.uv, wth.current.wind_kph, wth.current.wind_dir)
         })
-       */  
-    console.log(content)
+         
+    console.log(content)*/
 
 
 }
