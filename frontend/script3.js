@@ -60,14 +60,11 @@ const loadEvent = _ => {
                 
                 let roundedTemp = Math.round(main.temp * 10) / 10
                 
-                let date = new Date(dt * 1000);
-                var timestr = date.toLocaleTimeString(); // problem: displays only user's local time
 
                 const card =`
                 <div class="results">
                 <h2>${name}</h2>
                 <p>Country: ${sys.country}</p> 
-                <p>${timestr}</p>
                 <p>${roundedTemp} °C</p>
                 <p>Humidity: ${main.humidity} %</p>
                 <p>Wind speed: ${wind.speed} km/h</p>
