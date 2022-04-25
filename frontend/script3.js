@@ -61,7 +61,7 @@ const loadEvent = _ => {
                 let roundedTemp = Math.round(main.temp * 10) / 10
                 
                 let date = new Date(dt * 1000);
-                var timestr = date.toLocaleTimeString(); // problem: displays only user's local time
+                let timestr = date.toLocaleTimeString(); // problem: displays only user's local time
 
                 const card =`
                 <div class="results">
